@@ -23,8 +23,8 @@ export default function TemplateV2() {
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#050505]">
           {/* Background texture */}
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gold/[0.02] rounded-full blur-[120px]" />
-            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px]" />
+            <div className="absolute top-0 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-gold/[0.02] rounded-full blur-[80px] sm:blur-[120px]" />
+            <div className="absolute bottom-0 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-gold/[0.03] rounded-full blur-[60px] sm:blur-[100px]" />
           </div>
 
           {/* Giant watermark */}
@@ -36,28 +36,28 @@ export default function TemplateV2() {
 
           <div className="relative z-10 text-center px-4 pt-20">
             {/* Location Selector */}
-            <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 href="/locations/los-angeles"
-                className="group flex items-center gap-2 px-6 py-3 border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all"
+                className="group flex items-center gap-2 px-4 sm:px-6 py-3 border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all min-h-[48px]"
               >
                 <span className="w-2 h-2 bg-gold rounded-full" />
-                <span className="text-sm tracking-[0.2em] uppercase text-white/70 group-hover:text-gold transition-colors">
+                <span className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white/70 group-hover:text-gold transition-colors">
                   Los Angeles
                 </span>
               </Link>
               <Link
                 href="/locations/bay-area"
-                className="group flex items-center gap-2 px-6 py-3 border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all"
+                className="group flex items-center gap-2 px-4 sm:px-6 py-3 border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all min-h-[48px]"
               >
                 <span className="w-2 h-2 bg-gold rounded-full" />
-                <span className="text-sm tracking-[0.2em] uppercase text-white/70 group-hover:text-gold transition-colors">
+                <span className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase text-white/70 group-hover:text-gold transition-colors">
                   Bay Area
                 </span>
               </Link>
             </div>
 
-            <h1 className="font-[family-name:var(--font-heading)] text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] tracking-wider leading-[0.85] mb-8">
+            <h1 className="font-[family-name:var(--font-heading)] text-[3.5rem] sm:text-8xl md:text-9xl lg:text-[10rem] tracking-wider leading-[0.85] mb-6 sm:mb-8">
               WORLD
               <br />
               CLASS
@@ -65,14 +65,14 @@ export default function TemplateV2() {
               <span className="text-gradient-gold">EXOTIC</span>
             </h1>
 
-            <p className="text-white/40 text-lg max-w-lg mx-auto mb-12">
+            <p className="text-white/40 text-base sm:text-lg max-w-lg mx-auto mb-8 sm:mb-12">
               California&apos;s premier exotic and luxury car rental.
               Lamborghini · Rolls-Royce · Ferrari · McLaren · Mercedes
             </p>
 
             <Link
               href="/fleet"
-              className="inline-flex items-center gap-3 btn-gold text-lg px-10 py-5"
+              className="inline-flex items-center gap-3 btn-gold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5"
             >
               View Our Fleet
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,8 +81,8 @@ export default function TemplateV2() {
             </Link>
           </div>
 
-          {/* Bottom bar */}
-          <div className="absolute bottom-0 left-0 right-0 border-t border-dark-border">
+          {/* Bottom bar — hidden on mobile */}
+          <div className="absolute bottom-0 left-0 right-0 border-t border-dark-border hidden sm:block">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap justify-center gap-x-12 gap-y-2">
               {brands.map((brand) => (
                 <span
@@ -98,8 +98,8 @@ export default function TemplateV2() {
 
         {/* QUICK NUMBERS */}
         <section className="bg-gold/5 border-y border-gold/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
               {[
                 { n: `${cars.length}+`, l: "Vehicles" },
                 { n: "2", l: "Markets" },
@@ -107,10 +107,10 @@ export default function TemplateV2() {
                 { n: "Same Day", l: "Delivery" },
               ].map((s) => (
                 <div key={s.l}>
-                  <p className="font-[family-name:var(--font-heading)] text-3xl text-gold tracking-wider">
+                  <p className="font-[family-name:var(--font-heading)] text-2xl sm:text-3xl text-gold tracking-wider">
                     {s.n}
                   </p>
-                  <p className="text-text-muted text-sm mt-1">{s.l}</p>
+                  <p className="text-text-muted text-xs sm:text-sm mt-1">{s.l}</p>
                 </div>
               ))}
             </div>
@@ -118,14 +118,14 @@ export default function TemplateV2() {
         </section>
 
         {/* FLEET — LA */}
-        <section className="py-20 bg-dark">
+        <section className="py-12 sm:py-20 bg-dark">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-end justify-between mb-10">
+            <div className="flex items-end justify-between mb-8 sm:mb-10">
               <div>
-                <p className="text-gold text-sm tracking-[0.3em] uppercase mb-2">
+                <p className="text-gold text-xs sm:text-sm tracking-[0.3em] uppercase mb-2">
                   {laCars.length} vehicles
                 </p>
-                <h2 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl tracking-wider">
+                <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl tracking-wider">
                   LOS ANGELES
                 </h2>
               </div>
@@ -137,14 +137,14 @@ export default function TemplateV2() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {laCars.slice(0, 6).map((car) => (
                 <CarCard key={car.id} car={car} />
               ))}
             </div>
 
             <div className="sm:hidden text-center mt-8">
-              <Link href="/locations/los-angeles" className="btn-outline">
+              <Link href="/locations/los-angeles" className="btn-outline w-full">
                 See All LA Cars
               </Link>
             </div>
@@ -152,14 +152,14 @@ export default function TemplateV2() {
         </section>
 
         {/* FLEET — BAY AREA */}
-        <section className="py-20 bg-[#050505] border-t border-dark-border">
+        <section className="py-12 sm:py-20 bg-[#050505] border-t border-dark-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-end justify-between mb-10">
+            <div className="flex items-end justify-between mb-8 sm:mb-10">
               <div>
-                <p className="text-gold text-sm tracking-[0.3em] uppercase mb-2">
+                <p className="text-gold text-xs sm:text-sm tracking-[0.3em] uppercase mb-2">
                   {baCars.length} vehicles
                 </p>
-                <h2 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl tracking-wider">
+                <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl md:text-5xl tracking-wider">
                   BAY AREA
                 </h2>
               </div>
@@ -171,7 +171,7 @@ export default function TemplateV2() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {baCars.map((car) => (
                 <CarCard key={car.id} car={car} />
               ))}
@@ -197,7 +197,7 @@ export default function TemplateV2() {
                   desc: "3 cars on Saturday for a funeral? A Rolls-Royce for a last-minute wedding? We've done it all. No request is too fast.",
                 },
               ].map((item) => (
-                <div key={item.title} className="p-10 md:p-12">
+                <div key={item.title} className="p-6 sm:p-10 md:p-12">
                   <h3 className="font-[family-name:var(--font-heading)] text-xl tracking-wider text-gold mb-3">
                     {item.title}
                   </h3>
@@ -211,13 +211,13 @@ export default function TemplateV2() {
         </section>
 
         {/* SERVICES — Horizontal */}
-        <section className="py-20 bg-[#050505] border-t border-dark-border">
+        <section className="py-12 sm:py-20 bg-[#050505] border-t border-dark-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl tracking-wider mb-12 text-center">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl tracking-wider mb-8 sm:mb-12 text-center">
               FULL-SERVICE <span className="text-gradient-gold">LUXURY</span>
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {[
                 "Self-Drive",
                 "Chauffeur",
@@ -229,9 +229,9 @@ export default function TemplateV2() {
                 <Link
                   key={service}
                   href="/services"
-                  className="group bg-dark-card border border-dark-border p-6 text-center hover:border-gold hover:bg-gold/5 transition-all"
+                  className="group bg-dark-card border border-dark-border p-4 sm:p-6 text-center hover:border-gold hover:bg-gold/5 transition-all min-h-[48px] flex items-center justify-center"
                 >
-                  <p className="font-[family-name:var(--font-heading)] text-sm tracking-wider group-hover:text-gold transition-colors">
+                  <p className="font-[family-name:var(--font-heading)] text-xs sm:text-sm tracking-wider group-hover:text-gold transition-colors">
                     {service.toUpperCase()}
                   </p>
                 </Link>
@@ -241,13 +241,13 @@ export default function TemplateV2() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="py-20 bg-dark border-t border-dark-border">
+        <section className="py-12 sm:py-20 bg-dark border-t border-dark-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl tracking-wider mb-12 text-center">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl tracking-wider mb-8 sm:mb-12 text-center">
               WHAT CLIENTS SAY
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   name: "Marcus D.",
@@ -264,7 +264,7 @@ export default function TemplateV2() {
               ].map((t) => (
                 <div
                   key={t.name}
-                  className="border border-dark-border p-8"
+                  className="border border-dark-border p-6 sm:p-8"
                 >
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -289,30 +289,31 @@ export default function TemplateV2() {
         </section>
 
         {/* CTA — Massive */}
-        <section className="py-32 bg-[#050505] border-t border-dark-border relative overflow-hidden">
+        <section className="py-16 sm:py-32 bg-[#050505] border-t border-dark-border relative overflow-hidden">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <span className="font-[family-name:var(--font-heading)] text-[15vw] leading-none text-white/[0.015] tracking-[0.3em]">
               BOOK NOW
             </span>
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
-            <h2 className="font-[family-name:var(--font-heading)] text-5xl md:text-7xl tracking-wider mb-6">
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-7xl tracking-wider mb-6">
               YOUR CAR IS
               <br />
               <span className="text-gradient-gold">WAITING</span>
             </h2>
-            <p className="text-text-muted text-lg mb-10">
+            <p className="text-text-muted text-base sm:text-lg mb-8 sm:mb-10">
               Same-day delivery. Zelle, card, or cash. DocuSign contracts.
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               Call, text, or DM — we close 90% of warm leads.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/booking" className="btn-gold text-lg px-10 py-5">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link href="/booking" className="btn-gold text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 w-full sm:w-auto">
                 Book Your Ride
               </Link>
               <a
                 href="tel:+1XXXXXXXXXX"
-                className="btn-outline text-lg px-10 py-5"
+                className="btn-outline text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-5 w-full sm:w-auto"
               >
                 Call Now
               </a>

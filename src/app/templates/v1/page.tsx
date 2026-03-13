@@ -29,7 +29,7 @@ export default function TemplateV1() {
         {/* HERO — Split Screen */}
         <section className="relative min-h-screen flex items-stretch">
           {/* Left Side — Content */}
-          <div className="relative z-10 w-full lg:w-1/2 flex items-center bg-[#050505] px-8 sm:px-12 lg:px-20 pt-24 pb-16">
+          <div className="relative z-10 w-full lg:w-1/2 flex items-center bg-[#050505] px-5 sm:px-12 lg:px-20 pt-24 pb-16">
             <div className="max-w-xl">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-[1px] bg-gold" />
@@ -38,7 +38,7 @@ export default function TemplateV1() {
                 </span>
               </div>
 
-              <h1 className="font-[family-name:var(--font-heading)] text-6xl sm:text-7xl lg:text-8xl tracking-wider leading-[0.9] mb-8">
+              <h1 className="font-[family-name:var(--font-heading)] text-5xl sm:text-7xl lg:text-8xl tracking-wider leading-[0.9] mb-6 sm:mb-8">
                 DRIVE
                 <br />
                 <span className="text-gradient-gold">ICONIC.</span>
@@ -60,7 +60,7 @@ export default function TemplateV1() {
               </div>
 
               {/* Stats Row */}
-              <div className="grid grid-cols-4 gap-6 border-t border-dark-border pt-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 border-t border-dark-border pt-6 sm:pt-8">
                 {stats.map((s) => (
                   <div key={s.label}>
                     <p className="font-[family-name:var(--font-heading)] text-2xl text-gold tracking-wider">
@@ -148,12 +148,12 @@ export default function TemplateV1() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-dark-border">
               <Link
                 href="/locations/los-angeles"
-                className="group p-12 md:p-16 border-b md:border-b-0 md:border-r border-dark-border hover:bg-gold/5 transition-all duration-500"
+                className="group p-8 sm:p-12 md:p-16 border-b md:border-b-0 md:border-r border-dark-border hover:bg-gold/5 transition-all duration-500"
               >
                 <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                   {laCars.length}+ vehicles
                 </p>
-                <h3 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl tracking-wider mb-4 group-hover:text-gold transition-colors">
+                <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl md:text-6xl tracking-wider mb-4 group-hover:text-gold transition-colors">
                   LOS ANGELES
                 </h3>
                 <p className="text-text-muted mb-6 max-w-sm">
@@ -170,12 +170,12 @@ export default function TemplateV1() {
 
               <Link
                 href="/locations/bay-area"
-                className="group p-12 md:p-16 hover:bg-gold/5 transition-all duration-500"
+                className="group p-8 sm:p-12 md:p-16 hover:bg-gold/5 transition-all duration-500"
               >
                 <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                   {baCars.length} vehicles
                 </p>
-                <h3 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl tracking-wider mb-4 group-hover:text-gold transition-colors">
+                <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl md:text-6xl tracking-wider mb-4 group-hover:text-gold transition-colors">
                   BAY AREA
                 </h3>
                 <p className="text-text-muted mb-6 max-w-sm">
@@ -232,7 +232,7 @@ export default function TemplateV1() {
         {/* CTA — Full Width */}
         <section className="py-24 bg-[#050505] border-t border-dark-border">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl tracking-wider mb-6">
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl md:text-6xl tracking-wider mb-6">
               READY TO{" "}
               <span className="text-gradient-gold">RIDE?</span>
             </h2>

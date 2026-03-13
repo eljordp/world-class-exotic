@@ -5,7 +5,7 @@ export default function CarCard({ car }: { car: Car }) {
   return (
     <Link href={`/car/${car.slug}`} className="car-card group block overflow-hidden">
       {/* Image */}
-      <div className="relative h-64 overflow-hidden bg-dark-lighter">
+      <div className="relative h-48 sm:h-64 overflow-hidden bg-dark-lighter">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
         {/* Placeholder gradient when no image */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
@@ -28,7 +28,7 @@ export default function CarCard({ car }: { car: Car }) {
       </div>
 
       {/* Info */}
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         <h3 className="font-[family-name:var(--font-heading)] text-xl tracking-wider mb-1 group-hover:text-gold transition-colors">
           {car.name}
         </h3>

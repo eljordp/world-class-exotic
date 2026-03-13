@@ -113,36 +113,36 @@ export default function Home() {
           <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 text-center">
-            <div className="gold-line mx-auto mb-8" />
-            <p className="text-gold font-medium tracking-[0.3em] uppercase text-sm mb-6">
+            <div className="gold-line mx-auto mb-6 sm:mb-8" />
+            <p className="text-gold font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4 sm:mb-6">
               Los Angeles & Bay Area
             </p>
-            <h1 className="font-[family-name:var(--font-heading)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider leading-none mb-6">
+            <h1 className="font-[family-name:var(--font-heading)] text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-wider leading-none mb-4 sm:mb-6">
               WORLD CLASS
               <br />
               <span className="text-gradient-gold">EXOTIC</span>
             </h1>
-            <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
               Premium exotic and luxury car rentals. Lamborghini, Rolls-Royce,
               Ferrari, McLaren, and more. Delivered to your door.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/fleet" className="btn-gold">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link href="/fleet" className="btn-gold w-full sm:w-auto">
                 View Our Fleet
               </Link>
-              <Link href="/booking" className="btn-outline">
+              <Link href="/booking" className="btn-outline w-full sm:w-auto">
                 Book Now
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+            <div className="mt-12 sm:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="font-[family-name:var(--font-heading)] text-4xl text-gold tracking-wider">
+                  <p className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl text-gold tracking-wider">
                     {stat.value}
                   </p>
-                  <p className="text-text-muted text-sm mt-1 tracking-wider uppercase">
+                  <p className="text-text-muted text-xs sm:text-sm mt-1 tracking-wider uppercase">
                     {stat.label}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
         </section>
 
         {/* FEATURED FLEET */}
-        <section className="section-darker py-24">
+        <section className="section-darker py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
@@ -197,7 +197,7 @@ export default function Home() {
         </section>
 
         {/* LOCATIONS */}
-        <section className="section-dark py-24">
+        <section className="section-dark py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
@@ -221,7 +221,7 @@ export default function Home() {
                   <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                     15+ Vehicles
                   </p>
-                  <h3 className="font-[family-name:var(--font-heading)] text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
                     LOS ANGELES
                   </h3>
                   <p className="text-text-muted mb-6">
@@ -244,7 +244,7 @@ export default function Home() {
                   <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                     6 Vehicles
                   </p>
-                  <h3 className="font-[family-name:var(--font-heading)] text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
                     BAY AREA
                   </h3>
                   <p className="text-text-muted mb-6">
@@ -260,7 +260,7 @@ export default function Home() {
         </section>
 
         {/* SERVICES */}
-        <section className="section-darker py-24">
+        <section className="section-darker py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
@@ -295,7 +295,7 @@ export default function Home() {
         </section>
 
         {/* WHY CHOOSE US */}
-        <section className="section-dark py-24">
+        <section className="section-dark py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -354,7 +354,7 @@ export default function Home() {
               </div>
 
               <div className="relative">
-                <div className="bg-dark-card border border-dark-border p-10">
+                <div className="bg-dark-card border border-dark-border p-6 sm:p-10">
                   <h3 className="font-[family-name:var(--font-heading)] text-3xl tracking-wider mb-2">
                     READY TO RIDE?
                   </h3>
@@ -391,7 +391,7 @@ export default function Home() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="section-darker py-24">
+        <section className="section-darker py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
@@ -432,7 +432,7 @@ export default function Home() {
         {/* BRANDS */}
         <section className="section-dark py-16 border-t border-dark-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-12 items-center opacity-40">
+            <div className="flex flex-wrap justify-center gap-6 sm:gap-12 items-center opacity-40">
               {[
                 "LAMBORGHINI",
                 "ROLLS-ROYCE",
@@ -446,7 +446,7 @@ export default function Home() {
               ].map((brand) => (
                 <span
                   key={brand}
-                  className="font-[family-name:var(--font-heading)] text-2xl tracking-[0.2em]"
+                  className="font-[family-name:var(--font-heading)] text-base sm:text-2xl tracking-[0.1em] sm:tracking-[0.2em]"
                 >
                   {brand}
                 </span>

@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
+import type { Viewport } from "next";
+import MobileCTA from "@/components/MobileCTA";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0A0A0A",
+};
 
 export const metadata: Metadata = {
   title: "World Class Exotic | Luxury & Exotic Car Rentals in Los Angeles & Bay Area",
@@ -87,7 +96,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <MobileCTA />
+      </body>
     </html>
   );
 }

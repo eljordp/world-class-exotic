@@ -81,10 +81,10 @@ export default async function CarDetailPage({
 
         {/* Car Hero */}
         <section className="section-darker">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
               {/* Image */}
-              <div className="relative h-80 lg:h-[500px] bg-dark-card border border-dark-border overflow-hidden">
+              <div className="relative h-56 sm:h-80 lg:h-[500px] bg-dark-card border border-dark-border overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
                   <div className="text-center">
                     <span className="font-[family-name:var(--font-heading)] text-4xl tracking-widest text-text-muted/30">
@@ -115,9 +115,9 @@ export default async function CarDetailPage({
                 </p>
 
                 {/* Price */}
-                <div className="bg-dark-card border border-dark-border p-6 mb-8">
+                <div className="bg-dark-card border border-dark-border p-4 sm:p-6 mb-6 sm:mb-8">
                   <div className="flex items-end gap-2 mb-2">
-                    <span className="font-[family-name:var(--font-heading)] text-5xl text-gold tracking-wider">
+                    <span className="font-[family-name:var(--font-heading)] text-4xl sm:text-5xl text-gold tracking-wider">
                       ${car.dailyRate.toLocaleString()}
                     </span>
                     <span className="text-text-muted text-lg mb-1">/day</span>
@@ -189,7 +189,7 @@ export default async function CarDetailPage({
               SPECIFICATIONS
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
               {[
                 { label: "Year", value: car.specs.year.toString() },
                 { label: "Engine", value: car.specs.engine },
@@ -208,10 +208,10 @@ export default async function CarDetailPage({
               ].map((spec) => (
                 <div
                   key={spec.label}
-                  className="bg-dark-card border border-dark-border p-6"
+                  className="bg-dark-card border border-dark-border p-3 sm:p-6"
                 >
-                  <p className="text-text-muted text-sm mb-1">{spec.label}</p>
-                  <p className="font-[family-name:var(--font-heading)] text-xl tracking-wider text-gold">
+                  <p className="text-text-muted text-xs sm:text-sm mb-1">{spec.label}</p>
+                  <p className="font-[family-name:var(--font-heading)] text-sm sm:text-xl tracking-wider text-gold">
                     {spec.value}
                   </p>
                 </div>
