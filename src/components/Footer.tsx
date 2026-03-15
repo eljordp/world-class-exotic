@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const fleetLinks = [
   { href: "/fleet?category=exotic", label: "Exotic Cars" },
@@ -59,10 +60,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-4">
-              <span className="font-[family-name:var(--font-heading)] text-2xl tracking-wider">
-                WORLD CLASS{" "}
-                <span className="text-gradient-gold">EXOTIC</span>
-              </span>
+              <Image
+                src="/images/logo.jpg"
+                alt="World Class Exotic"
+                width={120}
+                height={120}
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="text-text-muted text-sm leading-relaxed mb-6">
               Premium exotic and luxury car rentals serving Los Angeles and the

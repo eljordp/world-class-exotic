@@ -15,7 +15,7 @@ export default function CarCard({ car }: { car: Car }) {
         </div>
         {/* Category Badge */}
         <div className="absolute top-4 left-4 z-20">
-          <span className="text-xs font-medium tracking-widest uppercase bg-gold/90 text-black px-3 py-1">
+          <span className="text-xs font-medium tracking-widest uppercase bg-gold/90 text-white px-3 py-1">
             {car.category}
           </span>
         </div>
