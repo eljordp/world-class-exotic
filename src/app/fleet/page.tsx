@@ -1,16 +1,39 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { Suspense, useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
 import { cars, brands, categories } from "@/data/cars";
 
 export default function FleetPage() {
+  return (
+    <Suspense>
+      <FleetContent />
+    </Suspense>
+  );
+}
+
+function FleetContent() {
+  const searchParams = useSearchParams();
+  const brandParam = searchParams.get("brand");
+
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [selectedBrand, setSelectedBrand] = useState<string>("all");
+  const [selectedBrand, setSelectedBrand] = useState<string>(brandParam || "all");
   const [selectedLocation, setSelectedLocation] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("price-low");
+
+  // Sync brand filter when URL param changes
+  useEffect(() => {
+    if (brandParam) {
+      // Match case-insensitively against known brands
+      const matched = brands.find(
+        (b) => b.toUpperCase() === brandParam.toUpperCase()
+      );
+      setSelectedBrand(matched || "all");
+    }
+  }, [brandParam]);
 
   const filteredCars = useMemo(() => {
     let result = [...cars];

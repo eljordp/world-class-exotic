@@ -85,12 +85,13 @@ export default function TemplateV2() {
           <div className="absolute bottom-0 left-0 right-0 border-t border-dark-border hidden sm:block">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap justify-center gap-x-12 gap-y-2">
               {brands.map((brand) => (
-                <span
+                <Link
                   key={brand}
-                  className="font-[family-name:var(--font-heading)] text-sm tracking-[0.3em] text-white/20 uppercase"
+                  href={`/fleet?brand=${encodeURIComponent(brand)}`}
+                  className="font-[family-name:var(--font-heading)] text-sm tracking-[0.3em] text-white/20 uppercase hover:text-gold transition-colors"
                 >
                   {brand}
-                </span>
+                </Link>
               ))}
             </div>
           </div>

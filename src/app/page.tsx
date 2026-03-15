@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
+import BrandMarquee from "@/components/BrandMarquee";
 import { getFeaturedCars } from "@/data/cars";
 
 const services = [
@@ -429,31 +430,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BRANDS */}
-        <section className="section-dark py-16 border-t border-dark-border">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-12 items-center opacity-40">
-              {[
-                "LAMBORGHINI",
-                "ROLLS-ROYCE",
-                "FERRARI",
-                "MCLAREN",
-                "MERCEDES-BENZ",
-                "PORSCHE",
-                "BMW",
-                "CADILLAC",
-                "CHEVROLET",
-              ].map((brand) => (
-                <span
-                  key={brand}
-                  className="font-[family-name:var(--font-heading)] text-base sm:text-2xl tracking-[0.1em] sm:tracking-[0.2em]"
-                >
-                  {brand}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* BRANDS — Looping Marquee */}
+        <BrandMarquee />
       </main>
       <Footer />
     </>
