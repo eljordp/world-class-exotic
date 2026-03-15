@@ -2,6 +2,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
+import BrandMarquee from "@/components/BrandMarquee";
 import { getFeaturedCars, cars } from "@/data/cars";
 
 /**
@@ -228,6 +229,9 @@ export default function TemplateV1() {
             </div>
           </div>
         </section>
+
+        {/* BRANDS — Looping Marquee */}
+        <BrandMarquee />
 
         {/* CTA — Full Width */}
         <section className="py-24 bg-[#050505] border-t border-dark-border">
