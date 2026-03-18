@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DatePicker from "@/components/DatePicker";
 import { cars } from "@/data/cars";
 
 type FormData = {
@@ -217,26 +218,21 @@ export default function BookingPage() {
                       )}
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                          <label className="text-sm text-text-muted block mb-2">Pickup Date *</label>
-                          <input
-                            type="date"
-                            value={form.pickupDate}
-                            min={new Date().toISOString().split("T")[0]}
-                            onChange={(e) => set("pickupDate", e.target.value)}
-                            className={inputClass}
-                          />
-                        </div>
-                        <div>
-                          <label className="text-sm text-text-muted block mb-2">Return Date *</label>
-                          <input
-                            type="date"
-                            value={form.returnDate}
-                            min={form.pickupDate || new Date().toISOString().split("T")[0]}
-                            onChange={(e) => set("returnDate", e.target.value)}
-                            className={inputClass}
-                          />
-                        </div>
+                        <DatePicker
+                          label="Pickup Date *"
+                          value={form.pickupDate}
+                          onChange={(v) => {
+                            set("pickupDate", v);
+                            if (form.returnDate && v > form.returnDate) set("returnDate", "");
+                          }}
+                          minDate={new Date().toISOString().split("T")[0]}
+                        />
+                        <DatePicker
+                          label="Return Date *"
+                          value={form.returnDate}
+                          onChange={(v) => set("returnDate", v)}
+                          minDate={form.pickupDate || new Date().toISOString().split("T")[0]}
+                        />
                       </div>
 
                       <div>
