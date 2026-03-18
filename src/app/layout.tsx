@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
 import MobileCTA from "@/components/MobileCTA";
-import TemplateSwitcher from "@/components/TemplateSwitcher";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -99,8 +98,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
-        <TemplateSwitcher />
-        <MobileCTA />
+<MobileCTA />
       </body>
     </html>
   );
