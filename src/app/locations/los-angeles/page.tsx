@@ -42,8 +42,10 @@ export default function LosAngelesPage() {
       <Header />
       <main className="pt-20">
         {/* Hero */}
-        <section className="relative py-24 section-darker overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+        <section className="relative py-24 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/hero-la.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/65" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="gold-line mb-6" />
             <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">

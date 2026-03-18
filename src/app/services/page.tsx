@@ -67,8 +67,11 @@ export default function ServicesPage() {
       <Header />
       <main className="pt-20">
         {/* Hero */}
-        <section className="py-20 section-darker">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/hero-services.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black/65" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div className="gold-line mx-auto mb-6" />
             <h1 className="font-[family-name:var(--font-heading)] text-5xl md:text-7xl tracking-wider mb-4">
               OUR <span className="text-gradient-gold">SERVICES</span>

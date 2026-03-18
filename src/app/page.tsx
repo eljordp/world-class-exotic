@@ -89,7 +89,15 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Video background — drop /public/hero.mp4 to activate */}
+          {/* Static hero image (always visible) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/hero-bg.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            aria-hidden="true"
+          />
+          {/* Video overlay — plays on top of image */}
           <video
             autoPlay
             loop
@@ -99,11 +107,9 @@ export default function Home() {
           >
             <source src="/hero.mp4" type="video/mp4" />
           </video>
-          {/* Fallback gradient (shows when no video) */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-dark to-black" />
+          {/* Overlay to darken */}
+          <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 hero-gradient" />
-          {/* Overlay to darken video */}
-          <div className="absolute inset-0 bg-black/50" />
           {/* Decorative elements */}
           <div className="absolute top-1/4 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
