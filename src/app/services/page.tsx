@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title:
-    "Luxury Car Rental Services | Chauffeur, Weddings, Events | World Class Exotic",
+    "Luxury Car Rental Services | Chauffeur, Weddings, Transfers | World Class Exotic",
   description:
-    "Full-service exotic car rental in LA and Bay Area. Chauffeur service, wedding car rental, airport transfers, corporate events, photo & film shoots. Book now.",
+    "Full-service exotic car rental in LA and Bay Area. Chauffeur service, wedding car rental, airport transfers. Book now.",
 };
 
 const services = [
   {
-    title: "Self-Drive Rentals",
+    title: "Drive It Yourself",
     description:
       "Get behind the wheel and experience the thrill yourself. Every rental includes full insurance coverage, and we deliver directly to your location — hotel, home, office, or airport. Multi-day discounts available.",
     features: [
@@ -57,30 +57,6 @@ const services = [
       "Flight tracking — we adjust for delays",
       "Meet & greet service",
       "Luggage assistance",
-    ],
-  },
-  {
-    title: "Corporate Events",
-    description:
-      "Impress clients, reward your team, or elevate your brand at the next corporate event. We provide multi-car fleets for product launches, conferences, team outings, and client entertainment. Custom branding available.",
-    features: [
-      "Multi-car fleet packages",
-      "Branded vehicle wraps available",
-      "Dedicated event coordinator",
-      "Valet & parking management",
-      "Invoice billing for businesses",
-    ],
-  },
-  {
-    title: "Photo, Film & Content",
-    description:
-      "Need an exotic car for your music video, Instagram photoshoot, commercial, or film production? We provide the vehicles that make content pop. Flexible hourly rates and on-location delivery anywhere in LA or the Bay.",
-    features: [
-      "Hourly rates for shoots",
-      "On-location delivery",
-      "Multiple vehicles available",
-      "Production-friendly scheduling",
-      "Social media collaboration opportunities",
     ],
   },
 ];

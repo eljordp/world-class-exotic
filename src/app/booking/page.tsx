@@ -47,7 +47,7 @@ export default function BookingPage() {
     vehicle: "",
     pickupDate: "",
     returnDate: "",
-    serviceType: "Self-Drive",
+    serviceType: "Drive It Yourself",
     delivery: false,
     deliveryAddress: "",
     needsInsurance: false,
@@ -257,7 +257,7 @@ export default function BookingPage() {
                       <div>
                         <label className="text-sm text-text-muted block mb-2">Service Type</label>
                         <div className="grid grid-cols-2 gap-2">
-                          {["Self-Drive", "Chauffeur", "Wedding", "Airport Transfer"].map((type) => (
+                          {["Drive It Yourself", "Chauffeur", "Wedding", "Airport Transfer"].map((type) => (
                             <button
                               key={type}
                               type="button"

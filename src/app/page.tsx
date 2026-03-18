@@ -9,7 +9,7 @@ import { getFeaturedCars } from "@/data/cars";
 
 const services = [
   {
-    title: "Self-Drive Rentals",
+    title: "Drive It Yourself",
     description:
       "Get behind the wheel of your dream car. Full insurance, unlimited miles, and door-to-door delivery.",
     icon: (

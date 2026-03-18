@@ -17,8 +17,6 @@ const serviceLinks = [
   { href: "/services", label: "Chauffeur Service" },
   { href: "/services", label: "Wedding Rentals" },
   { href: "/services", label: "Airport Transfers" },
-  { href: "/services", label: "Corporate Events" },
-  { href: "/services", label: "Photo & Film" },
 ];
 
 const companyLinks = [
