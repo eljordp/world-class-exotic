@@ -11,7 +11,8 @@ export async function POST(request: Request) {
     const vehicle = formData.get("vehicle") as string;
     const pickupDate = formData.get("pickupDate") as string;
     const returnDate = formData.get("returnDate") as string;
-    const pickupLocation = formData.get("pickupLocation") as string;
+    const delivery = formData.get("delivery") === "on";
+    const deliveryAddress = formData.get("deliveryAddress") as string;
     const serviceType = formData.get("serviceType") as string;
     const notes = formData.get("notes") as string;
     const license = formData.get("license") as File | null;
@@ -33,7 +34,7 @@ export async function POST(request: Request) {
       vehicle,
       pickupDate,
       returnDate,
-      pickupLocation: pickupLocation || "TBD",
+      delivery: delivery ? `Yes — ${deliveryAddress || "address TBD"} (+$150)` : "No (self pickup)",
       serviceType: serviceType || "Self-Drive",
       notes: notes || "None",
       licenseUploaded: license ? `${license.name} (${(license.size / 1024).toFixed(1)}KB)` : "Not provided",

@@ -203,14 +203,30 @@ export default function BookingPage() {
                       </div>
                       <div>
                         <label className="text-sm text-text-muted block mb-2">
-                          Pickup Location
+                          Need Delivery? <span className="text-gold">+$150</span>
                         </label>
-                        <input
-                          name="pickupLocation"
-                          type="text"
-                          className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
-                          placeholder="Address, hotel, airport, etc."
-                        />
+                        <label className="flex items-center gap-3 w-full bg-dark border border-dark-border px-4 py-3 cursor-pointer hover:border-gold/50 transition-colors group">
+                          <input
+                            name="delivery"
+                            type="checkbox"
+                            className="w-4 h-4 accent-gold"
+                            onChange={(e) => {
+                              const addressField = document.getElementById("deliveryAddress");
+                              if (addressField) addressField.style.display = e.target.checked ? "block" : "none";
+                            }}
+                          />
+                          <span className="text-white/60 group-hover:text-white/80 text-sm transition-colors">
+                            Yes, deliver to my location (hotel, airport, etc.)
+                          </span>
+                        </label>
+                        <div id="deliveryAddress" style={{ display: "none" }} className="mt-2">
+                          <input
+                            name="deliveryAddress"
+                            type="text"
+                            className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
+                            placeholder="Hotel name, address, or airport"
+                          />
+                        </div>
                       </div>
                       <div>
                         <label className="text-sm text-text-muted block mb-2">
