@@ -14,24 +14,12 @@ export default function BookingPage() {
     setLoading(true);
 
     const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      age: (form.elements.namedItem("age") as HTMLInputElement).value,
-      vehicle: (form.elements.namedItem("vehicle") as HTMLSelectElement).value,
-      pickupDate: (form.elements.namedItem("pickupDate") as HTMLInputElement).value,
-      returnDate: (form.elements.namedItem("returnDate") as HTMLInputElement).value,
-      pickupLocation: (form.elements.namedItem("pickupLocation") as HTMLInputElement).value,
-      serviceType: (form.elements.namedItem("serviceType") as HTMLSelectElement).value,
-      notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
-    };
+    const formData = new FormData(form);
 
     try {
       await fetch("/api/booking", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
       });
       setSubmitted(true);
     } catch {
@@ -233,9 +221,43 @@ export default function BookingPage() {
                           <option>Chauffeur</option>
                           <option>Wedding</option>
                           <option>Airport Transfer</option>
-                          <option>Corporate Event</option>
-                          <option>Photo/Film Shoot</option>
                         </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Document Upload */}
+                  <div>
+                    <h2 className="font-[family-name:var(--font-heading)] text-xl tracking-wider text-gold mb-1">
+                      DOCUMENTS
+                    </h2>
+                    <p className="text-text-muted text-sm mb-4">
+                      Upload now to speed up your booking, or bring them at pickup. JPG, PNG, or PDF.
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="text-sm text-text-muted block mb-2">
+                          Driver&apos;s License
+                        </label>
+                        <label className="flex flex-col items-center justify-center w-full h-32 border border-dashed border-dark-border hover:border-gold cursor-pointer transition-colors bg-dark group">
+                          <svg className="w-8 h-8 text-white/20 group-hover:text-gold/60 transition-colors mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <span className="text-xs text-text-muted group-hover:text-white/60 transition-colors">Click to upload</span>
+                          <input name="license" type="file" accept="image/*,.pdf" className="hidden" />
+                        </label>
+                      </div>
+                      <div>
+                        <label className="text-sm text-text-muted block mb-2">
+                          Proof of Insurance
+                        </label>
+                        <label className="flex flex-col items-center justify-center w-full h-32 border border-dashed border-dark-border hover:border-gold cursor-pointer transition-colors bg-dark group">
+                          <svg className="w-8 h-8 text-white/20 group-hover:text-gold/60 transition-colors mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <span className="text-xs text-text-muted group-hover:text-white/60 transition-colors">Click to upload</span>
+                          <input name="insurance" type="file" accept="image/*,.pdf" className="hidden" />
+                        </label>
                       </div>
                     </div>
                   </div>

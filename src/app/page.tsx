@@ -48,26 +48,6 @@ const services = [
       </svg>
     ),
   },
-  {
-    title: "Corporate Events",
-    description:
-      "Impress clients, reward teams, or elevate your brand. Multi-car packages available for any corporate need.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
-  },
-  {
-    title: "Photo & Film",
-    description:
-      "Need a car for your music video, photoshoot, or commercial? We provide the vehicles that make content pop.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
 ];
 
 const testimonials = [
@@ -109,8 +89,21 @@ export default function Home() {
       <main>
         {/* HERO */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Video background — drop /public/hero.mp4 to activate */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          >
+            <source src="/hero.mp4" type="video/mp4" />
+          </video>
+          {/* Fallback gradient (shows when no video) */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-dark to-black" />
           <div className="absolute inset-0 hero-gradient" />
+          {/* Overlay to darken video */}
+          <div className="absolute inset-0 bg-black/50" />
           {/* Decorative elements */}
           <div className="absolute top-1/4 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
