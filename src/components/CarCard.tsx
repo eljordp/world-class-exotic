@@ -1,18 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Car } from "@/data/cars";
 
 export default function CarCard({ car }: { car: Car }) {
+  const hasImage = car.image && car.image.startsWith("http");
+
   return (
     <Link href={`/car/${car.slug}`} className="car-card group block overflow-hidden">
       {/* Image */}
       <div className="relative h-48 sm:h-64 overflow-hidden bg-dark-lighter">
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-        {/* Placeholder gradient when no image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
-          <span className="text-text-muted text-sm font-[family-name:var(--font-heading)] tracking-widest uppercase">
-            {car.brand}
-          </span>
-        </div>
+        {hasImage ? (
+          <Image
+            src={car.image}
+            alt={car.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
+            <span className="text-text-muted text-sm font-[family-name:var(--font-heading)] tracking-widest uppercase">
+              {car.brand}
+            </span>
+          </div>
+        )}
         {/* Category Badge */}
         <div className="absolute top-4 left-4 z-20">
           <span className="text-xs font-medium tracking-widest uppercase bg-gold/90 text-white px-3 py-1">

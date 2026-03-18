@@ -32,7 +32,7 @@ export const cars: Car[] = [
     category: "exotic",
     location: "los-angeles",
     dailyRate: 1495,
-    image: "/images/huracan-evo-spyder.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-huracan-DeTMX3ZA.jpg",
     specs: {
       year: 2024,
       engine: "5.2L V10",
@@ -63,7 +63,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 1295,
-    image: "/images/urus.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-urus-BUINpVLL.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -94,7 +94,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 1595,
-    image: "/images/urus-widebody.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-urus-widebody-Dt6h-Hlg.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -124,7 +124,7 @@ export const cars: Car[] = [
     category: "luxury",
     location: "los-angeles",
     dailyRate: 1795,
-    image: "/images/cullinan.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/rolls-royce-cullinan-CzVbmiFC.jpg",
     specs: {
       year: 2024,
       engine: "6.75L Twin-Turbo V12",
@@ -155,7 +155,7 @@ export const cars: Car[] = [
     category: "luxury",
     location: "los-angeles",
     dailyRate: 2195,
-    image: "/images/cullinan-black-badge.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/rolls-royce-cullinan-bb-etS_1Xb7.jpg",
     specs: {
       year: 2024,
       engine: "6.75L Twin-Turbo V12",
@@ -185,7 +185,7 @@ export const cars: Car[] = [
     category: "exotic",
     location: "los-angeles",
     dailyRate: 1995,
-    image: "/images/ferrari-812-gts.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/ferrari-812-Cg9EWxZn.jpg",
     specs: {
       year: 2024,
       engine: "6.5L V12",
@@ -216,7 +216,7 @@ export const cars: Car[] = [
     category: "exotic",
     location: "los-angeles",
     dailyRate: 1695,
-    image: "/images/mclaren-720s.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mclaren-720s-sU38goe_.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -246,7 +246,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 995,
-    image: "/images/g63-amg.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-g63-DA5uEvX4.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -277,7 +277,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 1495,
-    image: "/images/g63-brabus.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-g63-brabus-BaXV9Ekt.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8 (Brabus Tuned)",
@@ -307,7 +307,7 @@ export const cars: Car[] = [
     category: "sport",
     location: "los-angeles",
     dailyRate: 895,
-    image: "/images/911-targa.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/porsche-911-targa-CKF-WQ9g.jpg",
     specs: {
       year: 2024,
       engine: "3.0L Twin-Turbo Flat-6",
@@ -337,7 +337,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 595,
-    image: "/images/escalade-600.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/cadillac-escalade-TwZj5Cwm.jpg",
     specs: {
       year: 2024,
       engine: "6.2L V8",
@@ -367,7 +367,7 @@ export const cars: Car[] = [
     category: "sport",
     location: "los-angeles",
     dailyRate: 495,
-    image: "/images/corvette-c8.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/corvette-c8-DJdjWOWf.jpg",
     specs: {
       year: 2024,
       engine: "6.2L V8",
@@ -397,7 +397,7 @@ export const cars: Car[] = [
     category: "sport",
     location: "los-angeles",
     dailyRate: 695,
-    image: "/images/corvette-z06.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/corvette-z06-C50CiTjB.jpg",
     specs: {
       year: 2024,
       engine: "5.5L Flat-Plane Crank V8",
@@ -427,7 +427,7 @@ export const cars: Car[] = [
     category: "luxury",
     location: "los-angeles",
     dailyRate: 595,
-    image: "/images/bmw-m5.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/bmw-m5-Ds3uQE-t.jpg",
     specs: {
       year: 2024,
       engine: "4.4L Twin-Turbo V8",
@@ -457,7 +457,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "los-angeles",
     dailyRate: 495,
-    image: "/images/gle-53-amg.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-gle53-De6WcXzp.jpg",
     specs: {
       year: 2024,
       engine: "3.0L Inline-6 Turbo + EQ Boost",
@@ -488,7 +488,7 @@ export const cars: Car[] = [
     category: "exotic",
     location: "bay-area",
     dailyRate: 1395,
-    image: "/images/huracan-evo.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-huracan-DeTMX3ZA.jpg",
     specs: {
       year: 2024,
       engine: "5.2L V10",
@@ -519,7 +519,7 @@ export const cars: Car[] = [
     category: "luxury",
     location: "bay-area",
     dailyRate: 1795,
-    image: "/images/cullinan-bay.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/rolls-royce-cullinan-CzVbmiFC.jpg",
     specs: {
       year: 2024,
       engine: "6.75L Twin-Turbo V12",
@@ -549,7 +549,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "bay-area",
     dailyRate: 995,
-    image: "/images/g63-bay.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-g63-DA5uEvX4.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -579,7 +579,7 @@ export const cars: Car[] = [
     category: "sport",
     location: "bay-area",
     dailyRate: 395,
-    image: "/images/bmw-m3.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/bmw-m3-CGFqMd_v.jpg",
     specs: {
       year: 2024,
       engine: "3.0L Twin-Turbo Inline-6",
@@ -609,7 +609,7 @@ export const cars: Car[] = [
     category: "suv",
     location: "bay-area",
     dailyRate: 795,
-    image: "/images/g550.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-g550-Bc4UsqqE.jpg",
     specs: {
       year: 2024,
       engine: "4.0L Twin-Turbo V8",
@@ -639,7 +639,7 @@ export const cars: Car[] = [
     category: "sport",
     location: "bay-area",
     dailyRate: 495,
-    image: "/images/corvette-c8-bay.jpg",
+    image: "https://exotic-car-sparkle.lovable.app/assets/corvette-c8-DJdjWOWf.jpg",
     specs: {
       year: 2024,
       engine: "6.2L V8",

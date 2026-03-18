@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -85,16 +86,24 @@ export default async function CarDetailPage({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
               {/* Image */}
               <div className="relative h-56 sm:h-80 lg:h-[500px] bg-dark-card border border-dark-border overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="font-[family-name:var(--font-heading)] text-4xl tracking-widest text-text-muted/30">
-                      {car.brand}
-                    </span>
-                    <p className="text-text-muted/20 text-sm mt-2">
-                      Image Coming Soon
-                    </p>
+                {car.image && car.image.startsWith("http") ? (
+                  <Image
+                    src={car.image}
+                    alt={car.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-dark-lighter to-dark-border flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="font-[family-name:var(--font-heading)] text-4xl tracking-widest text-text-muted/30">
+                        {car.brand}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="text-xs font-medium tracking-widest uppercase bg-gold/90 text-white px-3 py-1">
                     {car.category}
@@ -250,27 +259,124 @@ export default async function CarDetailPage({
           </div>
         </section>
 
-        {/* Schema Markup */}
+        {/* Schema Markup — Vehicle + Product + BreadcrumbList */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Product",
-              name: `${car.name} Rental`,
-              description: car.description,
-              brand: { "@type": "Brand", name: car.brand },
-              offers: {
-                "@type": "Offer",
-                price: car.dailyRate,
-                priceCurrency: "USD",
-                availability: car.available
-                  ? "https://schema.org/InStock"
-                  : "https://schema.org/OutOfStock",
-                priceValidUntil: "2027-12-31",
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                name: `${car.name} Rental`,
+                description: car.description,
+                brand: { "@type": "Brand", name: car.brand },
+                image: `https://worldclassexotic.com${car.image}`,
+                offers: {
+                  "@type": "Offer",
+                  price: car.dailyRate,
+                  priceCurrency: "USD",
+                  availability: car.available
+                    ? "https://schema.org/InStock"
+                    : "https://schema.org/OutOfStock",
+                  priceValidUntil: "2027-12-31",
+                  url: `https://worldclassexotic.com/car/${car.slug}`,
+                  seller: {
+                    "@type": "AutoRental",
+                    name: "World Class Exotic",
+                    url: "https://worldclassexotic.com",
+                  },
+                },
+                category: "Vehicle Rental",
+                additionalProperty: [
+                  {
+                    "@type": "PropertyValue",
+                    name: "Engine",
+                    value: car.specs.engine,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Horsepower",
+                    value: `${car.specs.horsepower} HP`,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Transmission",
+                    value: car.specs.transmission,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "0-60 MPH",
+                    value: car.specs.zeroToSixty,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Top Speed",
+                    value: car.specs.topSpeed,
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Seats",
+                    value: car.specs.seats.toString(),
+                  },
+                  {
+                    "@type": "PropertyValue",
+                    name: "Year",
+                    value: car.specs.year.toString(),
+                  },
+                ],
               },
-              category: "Vehicle Rental",
-            }),
+              {
+                "@context": "https://schema.org",
+                "@type": "Vehicle",
+                name: car.name,
+                brand: { "@type": "Brand", name: car.brand },
+                model: car.name.replace(`${car.brand} `, ""),
+                vehicleEngine: {
+                  "@type": "EngineSpecification",
+                  name: car.specs.engine,
+                },
+                seatingCapacity: car.specs.seats,
+                speed: {
+                  "@type": "QuantitativeValue",
+                  value: car.specs.topSpeed,
+                },
+                modelDate: car.specs.year.toString(),
+                image: `https://worldclassexotic.com${car.image}`,
+                description: car.description,
+                offers: {
+                  "@type": "Offer",
+                  price: car.dailyRate,
+                  priceCurrency: "USD",
+                  availability: car.available
+                    ? "https://schema.org/InStock"
+                    : "https://schema.org/OutOfStock",
+                },
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://worldclassexotic.com",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Fleet",
+                    item: "https://worldclassexotic.com/fleet",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: car.name,
+                    item: `https://worldclassexotic.com/car/${car.slug}`,
+                  },
+                ],
+              },
+            ]),
           }}
         />
 

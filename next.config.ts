@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "exotic-car-sparkle.lovable.app",
+        pathname: "/assets/**",
+      },
+    ],
   },
 };
 

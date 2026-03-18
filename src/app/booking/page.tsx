@@ -7,11 +7,38 @@ import { cars } from "@/data/cars";
 
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: Connect to booking software / form handler
-    setSubmitted(true);
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      age: (form.elements.namedItem("age") as HTMLInputElement).value,
+      vehicle: (form.elements.namedItem("vehicle") as HTMLSelectElement).value,
+      pickupDate: (form.elements.namedItem("pickupDate") as HTMLInputElement).value,
+      returnDate: (form.elements.namedItem("returnDate") as HTMLInputElement).value,
+      pickupLocation: (form.elements.namedItem("pickupLocation") as HTMLInputElement).value,
+      serviceType: (form.elements.namedItem("serviceType") as HTMLSelectElement).value,
+      notes: (form.elements.namedItem("notes") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -84,6 +111,7 @@ export default function BookingPage() {
                           Full Name *
                         </label>
                         <input
+                          name="name"
                           type="text"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
@@ -94,6 +122,7 @@ export default function BookingPage() {
                           Phone Number *
                         </label>
                         <input
+                          name="phone"
                           type="tel"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
@@ -104,6 +133,7 @@ export default function BookingPage() {
                           Email *
                         </label>
                         <input
+                          name="email"
                           type="email"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
@@ -114,6 +144,7 @@ export default function BookingPage() {
                           Age *
                         </label>
                         <input
+                          name="age"
                           type="number"
                           required
                           min="21"
@@ -135,6 +166,7 @@ export default function BookingPage() {
                           Vehicle *
                         </label>
                         <select
+                          name="vehicle"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
                         >
@@ -164,6 +196,7 @@ export default function BookingPage() {
                           Pickup Date *
                         </label>
                         <input
+                          name="pickupDate"
                           type="date"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
@@ -174,6 +207,7 @@ export default function BookingPage() {
                           Return Date *
                         </label>
                         <input
+                          name="returnDate"
                           type="date"
                           required
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
@@ -184,6 +218,7 @@ export default function BookingPage() {
                           Pickup Location
                         </label>
                         <input
+                          name="pickupLocation"
                           type="text"
                           className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors"
                           placeholder="Address, hotel, airport, etc."
@@ -193,7 +228,7 @@ export default function BookingPage() {
                         <label className="text-sm text-text-muted block mb-2">
                           Service Type
                         </label>
-                        <select className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors">
+                        <select name="serviceType" className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors">
                           <option>Self-Drive</option>
                           <option>Chauffeur</option>
                           <option>Wedding</option>
@@ -211,6 +246,7 @@ export default function BookingPage() {
                       Additional Notes
                     </label>
                     <textarea
+                      name="notes"
                       rows={4}
                       className="w-full bg-dark border border-dark-border text-white px-4 py-3 focus:border-gold outline-none transition-colors resize-none"
                       placeholder="Special requests, event details, multiple cars needed, etc."
@@ -241,8 +277,8 @@ export default function BookingPage() {
                     </p>
                   </div>
 
-                  <button type="submit" className="btn-gold w-full text-lg">
-                    Submit Booking Request
+                  <button type="submit" disabled={loading} className="btn-gold w-full text-lg disabled:opacity-50">
+                    {loading ? "Submitting..." : "Submit Booking Request"}
                   </button>
                 </form>
               </div>
