@@ -264,9 +264,31 @@ export default function BookingPage() {
                         </label>
                       </div>
                       <div>
-                        <label className="text-sm text-text-muted block mb-2">
-                          Proof of Insurance
-                        </label>
+                        <div className="flex items-center gap-2 mb-2">
+                          <label className="text-sm text-text-muted">Insurance Policy Card</label>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const ex = document.getElementById("insuranceExample");
+                              if (ex) ex.style.display = ex.style.display === "none" ? "block" : "none";
+                            }}
+                            className="text-xs text-gold/70 hover:text-gold underline transition-colors"
+                          >
+                            What&apos;s this?
+                          </button>
+                        </div>
+                        {/* Example card */}
+                        <div id="insuranceExample" style={{ display: "none" }} className="mb-3 p-3 border border-dark-border bg-dark rounded text-xs text-text-muted">
+                          <p className="text-white/70 mb-2 font-medium">This is your insurance policy card:</p>
+                          <div className="border border-dark-border bg-dark-card p-3 rounded font-mono text-[11px] leading-5">
+                            <div className="text-white/40 mb-1">AUTO INSURANCE ID CARD</div>
+                            <div><span className="text-white/40">Insurer:</span> <span className="text-white/70">State Farm / Geico / Progressive / etc.</span></div>
+                            <div><span className="text-white/40">Policy #:</span> <span className="text-white/70">XXXXXXX-XX</span></div>
+                            <div><span className="text-white/40">Insured:</span> <span className="text-white/70">Your Name</span></div>
+                            <div><span className="text-white/40">Effective:</span> <span className="text-white/70">01/01/25 – 07/01/25</span></div>
+                          </div>
+                          <p className="mt-2 text-white/40">It&apos;s the small card in your wallet or your insurance app. A photo of it is fine.</p>
+                        </div>
                         <label className="flex flex-col items-center justify-center w-full h-32 border border-dashed border-dark-border hover:border-gold cursor-pointer transition-colors bg-dark group">
                           <svg className="w-8 h-8 text-white/20 group-hover:text-gold/60 transition-colors mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
