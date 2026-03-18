@@ -10,15 +10,21 @@ interface DatePickerProps {
   onChange: (val: string) => void;
   minDate?: string; // "YYYY-MM-DD"
   placeholder?: string;
+  blockedDates?: string[]; // "YYYY-MM-DD" array
 }
 
-export default function DatePicker({ label, value, onChange, minDate, placeholder }: DatePickerProps) {
+export default function DatePicker({ label, value, onChange, minDate, placeholder, blockedDates = [] }: DatePickerProps) {
   const [open, setOpen] = useState(false);
   const [inputText, setInputText] = useState(value ? format(new Date(value + "T00:00:00"), "MM/dd/yyyy") : "");
   const ref = useRef<HTMLDivElement>(null);
 
   const selected = value ? new Date(value + "T00:00:00") : undefined;
   const min = minDate ? startOfDay(new Date(minDate + "T00:00:00")) : startOfDay(new Date());
+  const blockedSet = new Set(blockedDates);
+  const disabledDays = [
+    { before: min },
+    (date: Date) => blockedSet.has(format(date, "yyyy-MM-dd")),
+  ];
 
   // Close on outside click
   useEffect(() => {
@@ -92,7 +98,7 @@ export default function DatePicker({ label, value, onChange, minDate, placeholde
             mode="single"
             selected={selected}
             onSelect={handleDaySelect}
-            disabled={{ before: min }}
+            disabled={disabledDays}
             defaultMonth={selected ?? min}
             showOutsideDays
             classNames={{

@@ -41,6 +41,7 @@ export default function BookingPage() {
   const [showInsuranceExample, setShowInsuranceExample] = useState(false);
   const [licenseFileName, setLicenseFileName] = useState("");
   const [insuranceFileName, setInsuranceFileName] = useState("");
+  const [blockedDates, setBlockedDates] = useState<string[]>([]);
 
   const [form, setForm] = useState<FormData>({
     vehicle: "",
@@ -77,6 +78,17 @@ export default function BookingPage() {
 
   function set<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
+  }
+
+  async function fetchAvailability(vehicleId: string) {
+    if (!vehicleId) { setBlockedDates([]); return; }
+    try {
+      const res = await fetch(`/api/availability?vehicleId=${vehicleId}`);
+      const data = await res.json();
+      setBlockedDates(data.blockedDates ?? []);
+    } catch {
+      setBlockedDates([]);
+    }
   }
 
   function validateStep1() {
@@ -184,7 +196,12 @@ export default function BookingPage() {
                         <label className="text-sm text-text-muted block mb-2">Vehicle *</label>
                         <select
                           value={form.vehicle}
-                          onChange={(e) => set("vehicle", e.target.value)}
+                          onChange={(e) => {
+                            set("vehicle", e.target.value);
+                            set("pickupDate", "");
+                            set("returnDate", "");
+                            fetchAvailability(e.target.value);
+                          }}
                           className={selectClass}
                         >
                           <option value="">Select a vehicle</option>
@@ -226,12 +243,14 @@ export default function BookingPage() {
                             if (form.returnDate && v > form.returnDate) set("returnDate", "");
                           }}
                           minDate={new Date().toISOString().split("T")[0]}
+                          blockedDates={blockedDates}
                         />
                         <DatePicker
                           label="Return Date *"
                           value={form.returnDate}
                           onChange={(v) => set("returnDate", v)}
                           minDate={form.pickupDate || new Date().toISOString().split("T")[0]}
+                          blockedDates={blockedDates}
                         />
                       </div>
 
