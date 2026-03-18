@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         hostname: "exotic-car-sparkle.lovable.app",
         pathname: "/assets/**",
       },
+      {
+        protocol: "https",
+        hostname: "behold.pictures",
+      },
+      {
+        protocol: "https",
+        hostname: "**.behold.pictures",
+      },
     ],
   },
 };
