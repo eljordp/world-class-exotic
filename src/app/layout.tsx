@@ -11,6 +11,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "icon", url: "/icon-192.png", sizes: "192x192" },
+      { rel: "icon", url: "/icon-512.png", sizes: "512x512" },
+    ],
+  },
   title: "World Class Exotic | Luxury & Exotic Car Rentals in Los Angeles & Bay Area",
   description:
     "Premium exotic and luxury car rentals in Los Angeles and the Bay Area. Lamborghini, Rolls-Royce, Ferrari, McLaren, Mercedes & more. Daily rentals, chauffeur service, weddings & events.",
