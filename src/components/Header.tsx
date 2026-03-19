@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/locations/bay-area", label: "Bay Area" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "Contact" },
 ];
 
 export default function Header() {

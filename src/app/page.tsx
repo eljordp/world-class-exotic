@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import CarCard from "@/components/CarCard";
 import BrandMarquee from "@/components/BrandMarquee";
 import InstagramFeed from "@/components/InstagramFeed";
-import HeroLeadForm from "@/components/HeroLeadForm";
 import { getFeaturedCars } from "@/data/cars";
 
 const services = [
@@ -115,10 +114,10 @@ export default function Home() {
           <div className="absolute bottom-1/4 left-0 w-72 h-72 bg-gold/3 rounded-full blur-3xl" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Left — Copy */}
-              <div className="text-center lg:text-left">
-                <div className="gold-line mx-auto lg:mx-0 mb-6 sm:mb-8" />
+            <div className="flex flex-col items-center">
+              {/* Hero Copy */}
+              <div className="text-center">
+                <div className="gold-line mx-auto mb-6 sm:mb-8" />
                 <p className="text-gold font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4 sm:mb-6">
                   Los Angeles & Bay Area
                 </p>
@@ -127,11 +126,11 @@ export default function Home() {
                   <br />
                   <span className="text-gradient-gold">EXOTIC</span>
                 </h1>
-                <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed">
+                <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
                   Premium exotic and luxury car rentals. Lamborghini, Rolls-Royce,
                   Ferrari, McLaren, and more. Delivered to your door.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                   <Link href="/fleet" className="btn-gold w-full sm:w-auto">
                     View Our Fleet
                   </Link>
@@ -143,7 +142,7 @@ export default function Home() {
                 {/* Stats */}
                 <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
                   {stats.map((stat) => (
-                    <div key={stat.label} className="text-center lg:text-left">
+                    <div key={stat.label} className="text-center">
                       <p className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl text-gold tracking-wider">
                         {stat.value}
                       </p>
@@ -155,10 +154,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right — Lead Capture Form */}
-              <div className="flex justify-center lg:justify-end">
-                <HeroLeadForm />
-              </div>
             </div>
           </div>
 

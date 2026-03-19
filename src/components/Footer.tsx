@@ -21,7 +21,7 @@ const serviceLinks = [
 
 const companyLinks = [
   { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "Contact" },
   { href: "/fleet", label: "Our Fleet" },
   { href: "/booking", label: "Book Now" },
   { href: "/faq", label: "FAQ" },
@@ -192,13 +192,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <Link
-              href="/contact"
+              href="/about"
               className="text-sm text-text-muted hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/contact"
+              href="/about"
               className="text-sm text-text-muted hover:text-white transition-colors"
             >
               Terms of Service

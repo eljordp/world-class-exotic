@@ -66,6 +66,17 @@ export default function ServicesPage() {
     <>
       <Header />
       <main className="pt-20">
+        {/* Booking Banner */}
+        <div className="w-full bg-[#0A0A0A] border-b border-gold/30 py-4 px-4">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+            <p className="text-white/80 text-sm sm:text-base">
+              Ready to book? Skip straight to our booking form
+            </p>
+            <Link href="/booking" className="btn-gold text-sm py-2 px-5 whitespace-nowrap">
+              Book Now →
+            </Link>
+          </div>
+        </div>
         {/* Hero */}
         <section className="relative py-20 overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -155,7 +166,7 @@ export default function ServicesPage() {
               making the impossible happen — on any timeline.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-gold">
+              <Link href="/about" className="btn-gold">
                 Contact Us
               </Link>
               <a href="tel:+1XXXXXXXXXX" className="btn-outline">
