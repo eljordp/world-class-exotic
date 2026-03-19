@@ -38,8 +38,10 @@ export async function POST(request: Request) {
 
     const subtotal = dailyRate * days;
     const deliveryFee = delivery ? 150 : 0;
-    const insuranceFee = needsInsurance ? 75 * days : 0;
-    const total = subtotal + deliveryFee + insuranceFee;
+    const total = subtotal + deliveryFee;
+
+    // Refundable security deposit based on car tier (not added to total — held separately)
+    const deposit = dailyRate >= 1200 ? 2000 : dailyRate >= 700 ? 1000 : 500;
 
     // --- Generate booking ID early (needed for blob paths) ---
     const bookingId = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
@@ -74,7 +76,7 @@ export async function POST(request: Request) {
       days,
       subtotal,
       deliveryFee,
-      insuranceFee,
+      deposit,
       total,
       pickupDate,
       returnDate,
@@ -128,14 +130,13 @@ export async function POST(request: Request) {
           <td style="padding:10px 0;color:#888;">Delivery Fee</td>
           <td style="padding:10px 0;color:#FFFFFF;">${fmt(deliveryFee)}</td>
         </tr>` : ""}
-        ${insuranceFee > 0 ? `
         <tr style="border-bottom:1px solid #222;">
-          <td style="padding:10px 0;color:#888;">Insurance</td>
-          <td style="padding:10px 0;color:#FFFFFF;">$75/day &times; ${days} day${days !== 1 ? "s" : ""} = ${fmt(insuranceFee)}</td>
-        </tr>` : ""}
-        <tr>
           <td style="padding:10px 0;color:#888;font-weight:bold;">Total</td>
           <td style="padding:10px 0;color:#C9A84C;font-size:18px;font-weight:bold;">${fmt(total)}</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 0;color:#888;">Refundable Deposit</td>
+          <td style="padding:10px 0;color:#FFFFFF;">${fmt(deposit)} <span style="color:#888;font-size:13px;">(held at pickup, returned after)</span></td>
         </tr>
       `;
 
@@ -192,8 +193,8 @@ export async function POST(request: Request) {
       const ownerPricingRows = `
         <tr><td style="padding:8px 0;color:#555;">Rate</td><td style="padding:8px 0;">${fmt(dailyRate)}/day &times; ${days} day${days !== 1 ? "s" : ""} = ${fmt(subtotal)}</td></tr>
         ${deliveryFee > 0 ? `<tr><td style="padding:8px 0;color:#555;">Delivery Fee</td><td style="padding:8px 0;">${fmt(deliveryFee)}</td></tr>` : ""}
-        ${insuranceFee > 0 ? `<tr><td style="padding:8px 0;color:#555;">Insurance</td><td style="padding:8px 0;">$75/day &times; ${days} day${days !== 1 ? "s" : ""} = ${fmt(insuranceFee)}</td></tr>` : ""}
         <tr><td style="padding:8px 0;color:#555;font-weight:bold;">Total</td><td style="padding:8px 0;"><strong style="font-size:16px;">${fmt(total)}</strong></td></tr>
+        <tr><td style="padding:8px 0;color:#555;">Security Deposit</td><td style="padding:8px 0;">${fmt(deposit)} (refundable hold)</td></tr>
       `;
 
       // Build document links for owner

@@ -75,6 +75,9 @@ export default function BookingPage() {
   const total = selectedCar && days
     ? selectedCar.dailyRate * days + (form.delivery ? 150 : 0)
     : null;
+  const deposit = selectedCar
+    ? selectedCar.dailyRate >= 1200 ? 2000 : selectedCar.dailyRate >= 700 ? 1000 : 500
+    : null;
 
   function set<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -344,7 +347,13 @@ export default function BookingPage() {
                             <span>ESTIMATED TOTAL</span>
                             <span>${total.toLocaleString()}</span>
                           </div>
-                          <p className="text-white/30 text-xs mt-1">Deposit required to confirm. Full amount due at pickup.</p>
+                          {deposit && (
+                            <div className="flex justify-between text-sm text-white/40 mt-2 pt-2 border-t border-dark-border/50">
+                              <span>Refundable security deposit</span>
+                              <span>${deposit.toLocaleString()}</span>
+                            </div>
+                          )}
+                          <p className="text-white/30 text-xs mt-1">Deposit held at pickup, returned after.</p>
                         </div>
                       )}
 
