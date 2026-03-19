@@ -14,10 +14,10 @@ const services = [
   {
     title: "Drive It Yourself",
     description:
-      "Get behind the wheel and experience the thrill yourself. Every rental includes full insurance coverage, and we deliver directly to your location — hotel, home, office, or airport. Multi-day discounts available.",
+      "Get behind the wheel and experience the thrill yourself. Insurance is required — bring your own policy or purchase one through us at booking. We deliver directly to your location — hotel, home, office, or airport. Multi-day discounts available.",
     features: [
-      "Full insurance included",
       "Door-to-door delivery & pickup",
+      "Insurance required (bring your own or add at booking)",
       "Flexible rental periods (daily, weekly, monthly)",
       "24/7 roadside assistance",
       "No hidden fees",

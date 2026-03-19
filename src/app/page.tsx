@@ -180,6 +180,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TRUST BAR */}
+        <div className="bg-[#0A0A0A] border-y border-gold/20 py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* 1,000+ Happy Clients */}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span className="text-sm text-white/80">1,000+ Happy Clients</span>
+              </div>
+              {/* 20+ Premium Vehicles */}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 17a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4zM1 3h2l2.5 10h11L19 7H6" />
+                </svg>
+                <span className="text-sm text-white/80">20+ Premium Vehicles</span>
+              </div>
+              {/* LA & Bay Area Delivery */}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span className="text-sm text-white/80">LA &amp; Bay Area Delivery</span>
+              </div>
+              {/* Same-Day Available */}
+              <div className="flex items-center justify-center gap-2">
+                <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-sm text-white/80">Same-Day Available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* FEATURED FLEET */}
         <section className="section-darker py-12 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

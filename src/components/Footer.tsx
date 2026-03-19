@@ -24,6 +24,7 @@ const companyLinks = [
   { href: "/contact", label: "Contact" },
   { href: "/fleet", label: "Our Fleet" },
   { href: "/booking", label: "Book Now" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Footer() {
