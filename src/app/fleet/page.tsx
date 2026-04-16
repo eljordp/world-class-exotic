@@ -79,8 +79,7 @@ function FleetContent() {
             </h1>
             <p className="text-text-muted max-w-2xl mx-auto text-lg">
               Browse our complete collection of exotic, luxury, and sport
-              vehicles. Available for daily rental in Los Angeles and the Bay
-              Area.
+              vehicles. Available for daily rental in Los Angeles, Bay Area, and Miami.
             </p>
           </div>
         </section>
@@ -134,6 +133,7 @@ function FleetContent() {
                   <option value="all">All Locations</option>
                   <option value="los-angeles">Los Angeles</option>
                   <option value="bay-area">Bay Area</option>
+                  <option value="miami">Miami</option>
                 </select>
               </div>
 
