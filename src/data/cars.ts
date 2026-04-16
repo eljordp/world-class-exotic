@@ -3,7 +3,7 @@ export interface Car {
   name: string;
   brand: string;
   category: "exotic" | "luxury" | "suv" | "sport";
-  location: "los-angeles" | "bay-area" | "both";
+  location: "los-angeles" | "bay-area" | "miami" | "both";
   dailyRate: number;
   image: string;
   gallery?: string[];
@@ -662,6 +662,191 @@ export const cars: Car[] = [
     available: true,
     slug: "corvette-c8-bay-area",
   },
+  // MIAMI FLEET (6 cars)
+  {
+    id: "mi-1",
+    name: "Lamborghini Huracán EVO Spyder",
+    brand: "Lamborghini",
+    category: "exotic",
+    location: "miami",
+    dailyRate: 1495,
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-huracan-DeTMX3ZA.jpg",
+    specs: {
+      year: 2024,
+      engine: "5.2L V10",
+      horsepower: 631,
+      transmission: "7-Speed Dual-Clutch",
+      seats: 2,
+      topSpeed: "202 mph",
+      zeroToSixty: "2.9s",
+    },
+    description:
+      "Cruise South Beach and the causeway in the Huracán EVO Spyder. Drop the top, hit 631 horsepower, and let Miami know you've arrived.",
+    features: [
+      "Convertible Top",
+      "Carbon Ceramic Brakes",
+      "Sport Exhaust",
+      "Navigation System",
+      "Bluetooth Audio",
+      "Rear Camera",
+    ],
+    available: true,
+    slug: "lamborghini-huracan-evo-spyder-miami",
+    popular: true,
+  },
+  {
+    id: "mi-2",
+    name: "Lamborghini Urus",
+    brand: "Lamborghini",
+    category: "suv",
+    location: "miami",
+    dailyRate: 1295,
+    image: "https://exotic-car-sparkle.lovable.app/assets/lambo-urus-BUINpVLL.jpg",
+    specs: {
+      year: 2024,
+      engine: "4.0L Twin-Turbo V8",
+      horsepower: 641,
+      transmission: "8-Speed Automatic",
+      seats: 5,
+      topSpeed: "190 mph",
+      zeroToSixty: "3.5s",
+    },
+    description:
+      "The Urus owns Miami. From Brickell to the Design District, this super SUV carries your crew in pure Lamborghini style.",
+    features: [
+      "All-Wheel Drive",
+      "Panoramic Roof",
+      "Bang & Olufsen Audio",
+      "Adaptive Air Suspension",
+      "360° Camera",
+      "Heated & Cooled Seats",
+    ],
+    available: true,
+    slug: "lamborghini-urus-miami",
+    popular: true,
+  },
+  {
+    id: "mi-3",
+    name: "Rolls-Royce Cullinan Black Badge",
+    brand: "Rolls-Royce",
+    category: "luxury",
+    location: "miami",
+    dailyRate: 2195,
+    image: "https://exotic-car-sparkle.lovable.app/assets/rolls-royce-cullinan-bb-etS_1Xb7.jpg",
+    specs: {
+      year: 2024,
+      engine: "6.75L Twin-Turbo V12",
+      horsepower: 600,
+      transmission: "8-Speed Automatic",
+      seats: 5,
+      topSpeed: "155 mph",
+      zeroToSixty: "4.5s",
+    },
+    description:
+      "The Black Badge Cullinan was made for Miami nights. Bold, blacked-out, and built for those who never settle for less than the best.",
+    features: [
+      "Black Badge Exterior",
+      "Enhanced V12 Engine",
+      "Starlight Headliner",
+      "Bespoke Audio",
+      "Carbon Fiber Spirit of Ecstasy",
+      "Black Chrome Details",
+    ],
+    available: true,
+    slug: "rolls-royce-cullinan-black-badge-miami",
+    popular: true,
+  },
+  {
+    id: "mi-4",
+    name: "Ferrari 812 GTS",
+    brand: "Ferrari",
+    category: "exotic",
+    location: "miami",
+    dailyRate: 1995,
+    image: "https://exotic-car-sparkle.lovable.app/assets/ferrari-812-Cg9EWxZn.jpg",
+    specs: {
+      year: 2024,
+      engine: "6.5L V12",
+      horsepower: 789,
+      transmission: "7-Speed Dual-Clutch",
+      seats: 2,
+      topSpeed: "211 mph",
+      zeroToSixty: "2.8s",
+    },
+    description:
+      "789 horsepower, open sky, and the streets of Miami — the Ferrari 812 GTS is the ultimate combination. Nothing sounds like a naturally-aspirated Ferrari V12 with the top down.",
+    features: [
+      "Retractable Hard Top",
+      "Carbon Fiber Racing Seats",
+      "Manettino Drive Modes",
+      "JBL Premium Audio",
+      "Front & Rear Parking Sensors",
+      "Carbon Ceramic Brakes",
+    ],
+    available: true,
+    slug: "ferrari-812-gts-miami",
+  },
+  {
+    id: "mi-5",
+    name: "Mercedes-Benz G63 AMG",
+    brand: "Mercedes-Benz",
+    category: "suv",
+    location: "miami",
+    dailyRate: 995,
+    image: "https://exotic-car-sparkle.lovable.app/assets/mercedes-g63-DA5uEvX4.jpg",
+    specs: {
+      year: 2024,
+      engine: "4.0L Twin-Turbo V8",
+      horsepower: 577,
+      transmission: "9-Speed Automatic",
+      seats: 5,
+      topSpeed: "137 mph",
+      zeroToSixty: "4.0s",
+    },
+    description:
+      "The G63 is a Miami institution. From the clubs of Wynwood to the hotels of South Beach, this G-Wagon commands every block it rolls through.",
+    features: [
+      "AMG Performance Exhaust",
+      "Burmester Audio",
+      "Heated & Ventilated Seats",
+      "Adaptive Suspension",
+      "360° Camera",
+      "Ambient Lighting",
+    ],
+    available: true,
+    slug: "mercedes-g63-amg-miami",
+    popular: true,
+  },
+  {
+    id: "mi-6",
+    name: "McLaren 720S",
+    brand: "McLaren",
+    category: "exotic",
+    location: "miami",
+    dailyRate: 1695,
+    image: "https://exotic-car-sparkle.lovable.app/assets/mclaren-720s-sU38goe_.jpg",
+    specs: {
+      year: 2024,
+      engine: "4.0L Twin-Turbo V8",
+      horsepower: 710,
+      transmission: "7-Speed Dual-Clutch",
+      seats: 2,
+      topSpeed: "212 mph",
+      zeroToSixty: "2.7s",
+    },
+    description:
+      "The McLaren 720S turns heads from Ocean Drive to Aventura. Dihedral doors, fighter-jet cockpit, and 710 horsepower — Miami has never seen anything like it.",
+    features: [
+      "Dihedral Doors",
+      "Carbon Fiber Monocoque",
+      "Active Dynamics Panel",
+      "Bowers & Wilkins Audio",
+      "Variable Drift Control",
+      "Track Telemetry",
+    ],
+    available: true,
+    slug: "mclaren-720s-miami",
+  },
 ];
 
 export const brands = [...new Set(cars.map((c) => c.brand))];
@@ -669,6 +854,7 @@ export const categories = ["exotic", "luxury", "suv", "sport"] as const;
 export const locations = [
   { id: "los-angeles", name: "Los Angeles", shortName: "LA" },
   { id: "bay-area", name: "Bay Area", shortName: "Bay Area" },
+  { id: "miami", name: "Miami", shortName: "Miami" },
 ] as const;
 
 export function getCarBySlug(slug: string): Car | undefined {

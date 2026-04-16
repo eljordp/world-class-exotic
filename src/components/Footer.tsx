@@ -11,6 +11,7 @@ const fleetLinks = [
 const locationLinks = [
   { href: "/locations/los-angeles", label: "Los Angeles" },
   { href: "/locations/bay-area", label: "Bay Area" },
+  { href: "/locations/miami", label: "Miami" },
 ];
 
 const serviceLinks = [

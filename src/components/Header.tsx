@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/fleet", label: "Fleet" },
   { href: "/locations/los-angeles", label: "Los Angeles" },
   { href: "/locations/bay-area", label: "Bay Area" },
+  { href: "/locations/miami", label: "Miami" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/about", label: "Contact" },
