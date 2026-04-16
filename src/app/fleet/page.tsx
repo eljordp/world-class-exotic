@@ -127,8 +127,8 @@ function FleetContent() {
                 {[
                   { value: "all", label: "All Locations" },
                   { value: "los-angeles", label: "Los Angeles" },
-                  { value: "bay-area", label: "Bay Area" },
                   { value: "miami", label: "Miami" },
+                  { value: "bay-area", label: "Bay Area" },
                 ].map((loc) => (
                   <button
                     key={loc.value}

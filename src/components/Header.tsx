@@ -13,8 +13,8 @@ const navLinks = [
 const fleetDropdown = [
   { href: "/fleet", label: "All Vehicles" },
   { href: "/locations/los-angeles", label: "Los Angeles" },
-  { href: "/locations/bay-area", label: "Bay Area" },
   { href: "/locations/miami", label: "Miami" },
+  { href: "/locations/bay-area", label: "Bay Area" },
 ];
 
 export default function Header() {

@@ -119,7 +119,7 @@ export default function Home() {
               <div className="text-center">
                 <div className="gold-line mx-auto mb-6 sm:mb-8" />
                 <p className="text-gold font-medium tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs sm:text-sm mb-4 sm:mb-6">
-                  Los Angeles · Bay Area · Miami
+                  Los Angeles · Miami · Bay Area
                 </p>
                 <h1 className="font-[family-name:var(--font-heading)] text-5xl sm:text-7xl md:text-8xl lg:text-8xl tracking-wider leading-none mb-4 sm:mb-6">
                   WORLD CLASS
