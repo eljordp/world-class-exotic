@@ -2,20 +2,35 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const navLinks = [
-  { href: "/fleet", label: "Fleet" },
-  { href: "/locations/los-angeles", label: "Los Angeles" },
-  { href: "/locations/bay-area", label: "Bay Area" },
-  { href: "/locations/miami", label: "Miami" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/about", label: "Contact" },
 ];
 
+const fleetDropdown = [
+  { href: "/fleet", label: "All Vehicles" },
+  { href: "/locations/los-angeles", label: "Los Angeles" },
+  { href: "/locations/bay-area", label: "Bay Area" },
+  { href: "/locations/miami", label: "Miami" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [fleetOpen, setFleetOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setFleetOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-dark-border">
@@ -35,9 +50,35 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
+            {/* Fleet dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setFleetOpen(!fleetOpen)}
+                className="flex items-center gap-1 text-sm font-medium tracking-widest uppercase text-white/70 hover:text-gold transition-colors duration-300"
+              >
+                Fleet
+                <svg className={`w-3 h-3 transition-transform duration-200 ${fleetOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {fleetOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 bg-[#0A0A0A] border border-dark-border shadow-xl">
+                  {fleetDropdown.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setFleetOpen(false)}
+                      className="block px-5 py-3 text-sm tracking-widest uppercase text-white/70 hover:text-gold hover:bg-white/5 transition-colors border-b border-dark-border last:border-0"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="text-sm font-medium tracking-widest uppercase text-white/70 hover:text-gold transition-colors duration-300"
               >
@@ -87,9 +128,27 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-dark z-50 overflow-y-auto">
           <div className="px-6 py-8 space-y-1">
+            {/* Fleet + cities */}
+            <Link
+              href="/fleet"
+              onClick={() => setMobileOpen(false)}
+              className="block text-2xl font-[family-name:var(--font-heading)] tracking-widest uppercase text-white/70 active:text-gold transition-colors py-4 border-b border-dark-border"
+            >
+              Fleet
+            </Link>
+            {fleetDropdown.slice(1).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block text-lg font-[family-name:var(--font-heading)] tracking-widest uppercase text-white/40 active:text-gold transition-colors py-3 pl-6 border-b border-dark-border"
+              >
+                — {item.label}
+              </Link>
+            ))}
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="block text-2xl font-[family-name:var(--font-heading)] tracking-widest uppercase text-white/70 active:text-gold transition-colors py-4 border-b border-dark-border"
