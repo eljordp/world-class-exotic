@@ -123,18 +123,25 @@ function FleetContent() {
               </div>
 
               {/* Location Filter */}
-              <div className="flex items-center gap-2">
-                <label className="text-text-muted text-sm">Location:</label>
-                <select
-                  value={selectedLocation}
-                  onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="bg-dark border border-dark-border text-white px-4 py-2 text-sm focus:border-gold outline-none"
-                >
-                  <option value="all">All Locations</option>
-                  <option value="los-angeles">Los Angeles</option>
-                  <option value="bay-area">Bay Area</option>
-                  <option value="miami">Miami</option>
-                </select>
+              <div className="flex items-center gap-2 flex-wrap">
+                {[
+                  { value: "all", label: "All Locations" },
+                  { value: "los-angeles", label: "Los Angeles" },
+                  { value: "bay-area", label: "Bay Area" },
+                  { value: "miami", label: "Miami" },
+                ].map((loc) => (
+                  <button
+                    key={loc.value}
+                    onClick={() => setSelectedLocation(loc.value)}
+                    className={`px-4 py-2 text-sm tracking-widest uppercase border transition-colors duration-200 ${
+                      selectedLocation === loc.value
+                        ? "border-gold text-gold bg-gold/10"
+                        : "border-dark-border text-white/60 hover:border-white/40 hover:text-white"
+                    }`}
+                  >
+                    {loc.label}
+                  </button>
+                ))}
               </div>
 
               {/* Sort */}
