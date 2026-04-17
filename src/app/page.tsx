@@ -199,7 +199,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-sm text-white/80">LA &amp; Bay Area Delivery</span>
+                <span className="text-sm text-white/80">LA · Miami · Bay Area Delivery</span>
               </div>
               {/* Same-Day Available */}
               <div className="flex items-center justify-center gap-2">
@@ -222,7 +222,7 @@ export default function Home() {
               </h2>
               <p className="text-text-muted max-w-xl mx-auto">
                 Hand-picked from our fleet. The most requested exotic and luxury
-                vehicles in Los Angeles and the Bay Area.
+                vehicles in Los Angeles, Miami, and the Bay Area.
               </p>
             </div>
 
@@ -246,15 +246,15 @@ export default function Home() {
             <div className="text-center mb-16">
               <div className="gold-line mx-auto mb-6" />
               <h2 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl tracking-wider mb-4">
-                TWO <span className="text-gradient-gold">LOCATIONS</span>
+                THREE <span className="text-gradient-gold">LOCATIONS</span>
               </h2>
               <p className="text-text-muted max-w-xl mx-auto">
-                Serving California&apos;s two biggest markets with the finest
+                Serving Los Angeles, Miami, and the Bay Area with the finest
                 exotic and luxury vehicles.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Link
                 href="/locations/los-angeles"
                 className="group relative h-80 overflow-hidden border border-dark-border hover:border-gold transition-all duration-500"
@@ -265,15 +265,36 @@ export default function Home() {
                   <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                     15+ Vehicles
                   </p>
-                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl tracking-wider mb-3 group-hover:text-gold transition-colors">
                     LOS ANGELES
                   </h3>
-                  <p className="text-text-muted mb-6">
-                    Hollywood, Beverly Hills, Downtown LA, Huntington Beach &
-                    more
+                  <p className="text-text-muted text-sm mb-6">
+                    Hollywood, Beverly Hills, Malibu, Downtown LA & more
                   </p>
                   <span className="btn-outline text-sm py-2 px-6">
                     Explore LA Fleet
+                  </span>
+                </div>
+              </Link>
+
+              <Link
+                href="/locations/miami"
+                className="group relative h-80 overflow-hidden border border-dark-border hover:border-gold transition-all duration-500"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-dark-card to-dark-lighter" />
+                <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
+                  <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
+                    6 Vehicles
+                  </p>
+                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl tracking-wider mb-3 group-hover:text-gold transition-colors">
+                    MIAMI
+                  </h3>
+                  <p className="text-text-muted text-sm mb-6">
+                    South Beach, Brickell, Wynwood, Coral Gables & more
+                  </p>
+                  <span className="btn-outline text-sm py-2 px-6">
+                    Explore Miami Fleet
                   </span>
                 </div>
               </Link>
@@ -288,10 +309,10 @@ export default function Home() {
                   <p className="text-gold text-sm tracking-[0.3em] uppercase mb-4">
                     6 Vehicles
                   </p>
-                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-5xl tracking-wider mb-3 group-hover:text-gold transition-colors">
+                  <h3 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl tracking-wider mb-3 group-hover:text-gold transition-colors">
                     BAY AREA
                   </h3>
-                  <p className="text-text-muted mb-6">
+                  <p className="text-text-muted text-sm mb-6">
                     San Francisco, Oakland, San Jose, Silicon Valley & more
                   </p>
                   <span className="btn-outline text-sm py-2 px-6">
